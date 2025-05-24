@@ -1,0 +1,13 @@
+package com.sotec.support.Models.Enums;
+
+public enum CategoriesEnum {
+    CATALOGUE_RECHERCHE,
+    AGENDA_RECHERCHE,
+    CHANGEMENT_CLIMATIQUE,
+    DONNEES_INDICATEURS,
+    REGISTRE_INVESTISSEMENTS,
+    ACTUALITES,
+    ACTIVITES,
+    FORUM,
+    TCHAT
+}
