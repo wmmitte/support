@@ -1,5 +1,6 @@
 package com.sotec.support.Controllers.Ticket;
 
+import com.sotec.support.Dtos.Ticket.TicketDto;
 import com.sotec.support.Dtos.Ticket.UserDto;
 import com.sotec.support.Services.Ticket.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,15 @@ public class UserController {
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable final UUID id) {
         userService.deleteUserById(id);
+    }
+
+    @GetMapping("/{id}/userrole")
+    public UserDto setUserRoleToUser(@PathVariable("id") final UUID id) {
+        return userService.setUserRole(id);
+    }
+
+    @GetMapping("/{id}/adminrole")
+    public UserDto setUserRoleToAdmin(@PathVariable("id") final UUID id) {
+        return userService.setAdminRole(id);
     }
 }

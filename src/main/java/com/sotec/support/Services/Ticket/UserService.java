@@ -12,4 +12,6 @@ public interface UserService {
     List<UserDto> getAllUsers();
     UserDto getUserById(UUID id);
     void deleteUserById(UUID id);
+    UserDto setUserRole(UUID id);
+    UserDto setAdminRole(UUID id);
 }

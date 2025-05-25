@@ -1,10 +1,16 @@
 package com.sotec.support.Services.Ticket.Implementation;
 
+import com.sotec.support.Dtos.Ticket.TicketDto;
 import com.sotec.support.Dtos.Ticket.UserDto;
 import com.sotec.support.Mappers.Ticket.UserMapper;
+import com.sotec.support.Models.Enums.StatusEnum;
+import com.sotec.support.Models.Enums.UserRoleEnum;
+import com.sotec.support.Models.Ticket.Ticket;
 import com.sotec.support.Models.Ticket.User;
 import com.sotec.support.Repositories.Ticket.UserRepository;
 import com.sotec.support.Services.Ticket.UserService;
+
+import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -24,6 +30,7 @@ public class UserServiceImpl implements UserService {
     public UserDto createUser(UserDto objectDto) {
         if (!userRepository.existsByLogin(objectDto.getLogin())) {
             User objectToSave = userMapper.toEntity(objectDto);
+            objectToSave.setRole(UserRoleEnum.ROLE_USER);
             User savedObject = userRepository.save(objectToSave);
             return userMapper.toDto(savedObject);
         }
@@ -112,6 +119,32 @@ public class UserServiceImpl implements UserService {
             } else { //object has non-empty relations
                 return;
             }
+        }
+    }
+
+    @Override
+    public UserDto setUserRole(UUID id) {
+        User dbObject = userRepository.findById(id).orElse(null);
+        if (dbObject != null) {
+            dbObject.setRole(UserRoleEnum.ROLE_USER);
+            User savedObject = userRepository.save(dbObject);
+            return userMapper.toDto(savedObject);
+        }else{
+            // Throw Error here
+            return null;
+        }
+    }
+
+    @Override
+    public UserDto setAdminRole(UUID id) {
+        User dbObject = userRepository.findById(id).orElse(null);
+        if (dbObject != null) {
+            dbObject.setRole(UserRoleEnum.ROLE_ADMIN);
+            User savedObject = userRepository.save(dbObject);
+            return userMapper.toDto(savedObject);
+        }else{
+            // Throw Error here
+            return null;
         }
     }
 }

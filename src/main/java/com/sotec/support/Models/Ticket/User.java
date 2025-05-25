@@ -1,5 +1,6 @@
 package com.sotec.support.Models.Ticket;
 
+import com.sotec.support.Models.Enums.UserRoleEnum;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,4 +18,6 @@ public class User {
     private UUID id;
     private String login;
     private String password;
+    @Enumerated(EnumType.STRING)
+    private UserRoleEnum role; // USER | ADMIN
 }
