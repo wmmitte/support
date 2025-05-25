@@ -1,26 +1,25 @@
-# Getting Started
+# About the project
 
-### Reference Documentation
-For further reference, please consider the following sections:
+## Support / Ticket management
+this project is only for training purpose on app developpement with spring-boot and Angular
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.4.5/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.4.5/maven-plugin/build-image.html)
-* [Distributed Tracing Reference Guide](https://docs.micrometer.io/tracing/reference/index.html)
-* [Getting Started with Distributed Tracing](https://docs.spring.io/spring-boot/3.4.5/reference/actuator/tracing.html)
-* [Spring Web](https://docs.spring.io/spring-boot/3.4.5/reference/web/servlet.html)
+## Technologies
+### Back-End architecture
+you'll find, in this project :
+* Entities
+* Dtos
+* Repositories (with Jpa)
+* mappers
+* Services
+* Controllers
 
-### Guides
-The following guides illustrate how to use some features concretely:
+### Front-End architecture
+comming soon...
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-
-### Maven Parent overrides
-
-Due to Maven's design, elements are inherited from the parent POM to the project POM.
-While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the parent.
-To prevent this, the project POM contains empty overrides for these elements.
-If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
-
+### Contributors
+* SergiO 
+  * Spring-boot/Angular dev Champion, with more than 3 years of experience
+  * Main coach for this discovery project
+* Mitte
+    * Web developer in the PHP world for over 5 years
+    * Beginner in java spring and angular web development
