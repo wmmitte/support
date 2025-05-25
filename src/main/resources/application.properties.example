@@ -1,0 +1,12 @@
+# Application Information
+spring.application.name=support
+spring.datasource.url=jdbc:postgresql://localhost:5432/db_support
+spring.datasource.username=support
+spring.datasource.password=support
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+
+# Server Configuration
+server.port=8181
+server.servlet.context-path=/api
